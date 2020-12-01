@@ -135,7 +135,7 @@ router.post('/tokenIsValid', async (req, res) => {
     }
 })
 
-router.get("/", async (req, res) => {
+router.get("/test", async (req, res) => {
         res.send("HELLO user")
     })
 
