@@ -135,14 +135,20 @@ router.post('/tokenIsValid', async (req, res) => {
     }
 })
 
-router.get("/", auth, async (req, res) => {
-    const user = await User.findById(req.user)
-    console.log(user);
-    res.send(user)
-})
-router.get("/react", (req, res) => {
-    res.sendFile(path.join(__dirname+"../../../build/index.html"));
+router.get("/", async (req, res) => {
+        res.send("HELLO user")
+    })
+
+
+
+// router.get("/", auth, async (req, res) => {
+//     const user = await User.findById(req.user)
+//     console.log(user);
+//     res.send(user)
+// })
+// router.get("/react", (req, res) => {
+//     res.sendFile(path.join(__dirname+"../../../build/index.html"));
     
-})
+// })
 
 module.exports = router
