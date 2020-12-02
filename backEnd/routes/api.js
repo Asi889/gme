@@ -156,4 +156,9 @@ router.get("/test", (req, res) => {
     
 // })
 
+router.get("/api/test", (req, res) => {
+    res.json("HELLO user")
+})
+
+
 module.exports = router
