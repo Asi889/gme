@@ -32,5 +32,5 @@ app.use('/', api)
         console.log(`running on port ${port}`);
     });
 
-    mongoose.connect('mongodb+srv://asi:Asi123321@gig.jr1wz.mongodb.net/gig', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
-    // process.env.MONGODB_CONNECTION_STRING
+    mongoose.connect(process.env.MONGODB_CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+    // 'mongodb+srv://asi:Asi123321@gig.jr1wz.mongodb.net/gig'

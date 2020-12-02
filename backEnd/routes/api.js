@@ -5,6 +5,8 @@ const jwt = require('jsonwebtoken')
 const User = require('../model/userSchema');
 const auth = require('../middleware/auth');
 const path = require('path');
+// require('dotenv').config()
+
 
 
 
@@ -61,7 +63,7 @@ router.post('/logIn', async (req, res) => {
         }
 
         const user = await User.findOne({ email: email })
-        console.log(user);
+        // console.log(user);
 
         if (!user) {
             return res.status(400).send('No account with this email has been registered ')
@@ -73,6 +75,8 @@ router.post('/logIn', async (req, res) => {
             return res.status(400).send('Invalid credentials ')
 
         }
+        console.log("bbb");
+        console.log(process.env.JWT_SECRET);
 
         const token = jwt.sign({ id: user._id },  process.env.JWT_SECRET);
         // process.env.JWT_SECRET
@@ -118,8 +122,9 @@ router.post('/tokenIsValid', async (req, res) => {
             return res.send(false);
         }
 
-        const verified = jwt.verify(token, 'q&*E+Aa2J?uX;*pu}=rXb&#8XjgYhHqT3xP%[:"tv/*55Ha/>^');
-        // process.env.JWT_SECRET
+        const verified = jwt.verify(token, process.env.JWT_SECRET );
+        // 'q&*E+Aa2J?uX;*pu}=rXb&#8XjgYhHqT3xP%[:"tv/*55Ha/>^'
+        process.env.JWT_SECRET
 
         const user = await User.findById(verified.id);
 
