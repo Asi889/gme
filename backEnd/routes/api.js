@@ -141,7 +141,7 @@ router.post('/tokenIsValid', async (req, res) => {
 })
 
 router.get("/test", (req, res) => {
-        res.json("HELLO user")
+        res.json("Moti Levi Ha Gever!!!!!!!!!!!!!!!!!!!!!")
     })
 
 
