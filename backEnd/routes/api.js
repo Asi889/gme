@@ -146,7 +146,7 @@ router.get("/test", (req, res) => {
 
 
 
-router.get("/", auth, async (req, res) => {
+router.get("/profile", auth, async (req, res) => {
     // console.log(req.user);
     const user = await User.findById(req.user)
     // console.log(user);
