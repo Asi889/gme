@@ -30,7 +30,7 @@ app.use(cors());
 //     res.sendFile(__dirname + '/index.html');
 // });
 // console.log(__dirname);
-
+///hello
 
 
 app.use('/api', api)
